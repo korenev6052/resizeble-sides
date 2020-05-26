@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {CdkDragEnd, CdkDragMove, CdkDragStart} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'resizeble-sides';
+
+  onDragStatrted(start: CdkDragStart) {
+    console.log('start', start);
+  }
+
+  onDragMoved(move: CdkDragMove) {
+    console.log('move', move);
+  }
+
+  onDragEnded(end: CdkDragEnd) {
+    console.log('end', end);
+  }
+
 }

@@ -1,13 +1,18 @@
 <div class="container">
   <div class="left-side" #leftSide></div>
   <div
-    class="handler"
+    class="handle"
     cdkDrag
     cdkDragLockAxis="x"
+    cdkDragBoundary=".container"
     (cdkDragStarted)="onDragStatrted($event)"
     (cdkDragMoved)="onDragMoved($event)"
     (cdkDragEnded)="onDragEnded($event)"
   >
+    <div class="handle-line"></div>
+    <div class="handle-arrow">
+      <mat-icon>code</mat-icon>
+    </div>
   </div>
   <div class="right-side" #rightSide></div>
 </div>

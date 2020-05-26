@@ -28,6 +28,8 @@ export class AppComponent implements OnInit {
     return this._rightSide;
   }
 
+  @ViewChild('handler', {read: ElementRef, static: false}) handler: ElementRef;
+
   private leftSideWidth: number = null;
   private rightSideWidth: number = null;
 
@@ -45,6 +47,8 @@ export class AppComponent implements OnInit {
     const resizedRightSideWidth = this.rightSideWidth - translation;
     this.leftSide.nativeElement.style.width = `${resizedLeftSideWidth}px`;
     this.rightSide.nativeElement.style.width = `${resizedRightSideWidth}px`;
+    console.log(resizedLeftSideWidth);
+    console.log(resizedRightSideWidth);
   }
 
   onDragEnded(end: CdkDragEnd) {

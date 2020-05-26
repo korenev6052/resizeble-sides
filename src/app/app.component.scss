@@ -1,12 +1,14 @@
 .container {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
+  width: 600px;
+  height: 600px;
+  margin: 20px auto;
   padding: 0;
   border: 0;
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .left-side {
@@ -27,9 +29,40 @@
   background: aquamarine;
 }
 
-.handler {
-  width: 1px;
+.handle {
+  position: absolute;
+  width: 10px;
   height: 100%;
-  background: goldenrod;
+  left: 60%;
+  margin-left: -5px;
+  background: transparent;
   cursor: w-resize;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .handle-line {
+    width: 1px;
+    height: 100%;
+    background: goldenrod;
+  }
+
+  .handle-arrow {
+    display: none;
+  }
+
+  &:hover .handle-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: goldenrod;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
